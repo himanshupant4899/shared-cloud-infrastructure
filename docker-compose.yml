@@ -1,0 +1,7 @@
+name: tooling
+# uses custom docker image (Dockerfile) with required tools
+services:
+  tooling:
+    build: .
+  
+
