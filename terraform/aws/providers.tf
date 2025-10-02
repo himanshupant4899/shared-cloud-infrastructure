@@ -9,7 +9,7 @@ terraform {
 
 # Configure the cloud Provider
 provider "aws" {
-  region = var.aws_region
+  region     = var.aws_region
   access_key = "test"
   secret_key = "test"
   endpoints {
@@ -21,14 +21,13 @@ provider "aws" {
     s3             = "http://s3.localhost.localstack.cloud:4566"
     secretsmanager = "http://localhost:4566"
     ssm            = "http://localhost:4566"
+    sts            = "http://localhost:4566"
+    kms            = "http://localhost:4566"
   }
   skip_credentials_validation = true
   skip_metadata_api_check     = true
-  skip_requesting_account_id = true
+  skip_requesting_account_id  = true
 }
 
-# Create a VPC
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
-}
+
 
